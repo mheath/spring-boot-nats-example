@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.mheath</groupId>
+    <artifactId>spring-boot-nats-example</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <!-- Inherit defaults from Spring Boot -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>0.5.0.M1</version>
+    </parent>
+
+    <!-- Add typical dependencies for a web application -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+
+	    <dependency>
+		    <groupId>com.github.cloudfoundry-community</groupId>
+		    <artifactId>nats-client-spring</artifactId>
+		    <version>0.6-SNAPSHOT</version>
+	    </dependency>
+    </dependencies>
+
+    <!-- Package as an executable JAR -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+   		<pluginManagement>
+   			<plugins>
+   				<plugin>
+   					<groupId>org.apache.maven.plugins</groupId>
+   					<artifactId>maven-compiler-plugin</artifactId>
+   					<configuration>
+   						<source>1.7</source>
+   						<target>1.7</target>
+   					</configuration>
+   				</plugin>
+   			</plugins>
+   		</pluginManagement>
+    </build>
+
+    <!-- Allow access to Spring milestones and snapshots -->
+    <!-- (you don't need this if you are using anything after 0.5.0.M1) -->
+    <repositories>
+        <repository>
+            <id>spring-snapshots</id>
+            <url>http://repo.springsource.org/snapshot</url>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <url>http://repo.springsource.org/milestone</url>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <url>http://repo.springsource.org/snapshot</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <url>http://repo.springsource.org/milestone</url>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
