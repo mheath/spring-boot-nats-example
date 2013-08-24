@@ -2,7 +2,7 @@
 
 This examples demonstrates how to use the [Java NATS client](https://github.com/cloudfoundry-community/java-nats)
 with [Spring Boot](https://github.com/SpringSource/spring-boot) by providing a NATS to web gateway. This allows
-you watch all published NATS messages in your browser.
+you watch all published NATS messages in your browser. Cloud Foundry uses NATS for distributing messages.
 
 To run this example, you will need Java, Maven, and Ruby installed.
 
@@ -62,7 +62,7 @@ You should see in the example terminal that it received a NATS message.
 Now point your browser to 'http://localhost:8080' and publish more NATS messages doing:
 
 ```
-$ nats-pub spring "Spring Boo rocks."
+$ nats-pub spring "Spring Boot rocks."
 $ nats-pub some.other.subject "Cloud Foundry makes me happy."
 $ nats-pub heath "Mike Heath is my hero."
 ```
